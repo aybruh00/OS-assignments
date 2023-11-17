@@ -28,7 +28,6 @@ void execute(char*);
 void print_hist(void);
 void print_proc(void);
 
-// char **h=malloc(sizeof(char)*5);
 char* h[5]={'\0'};
 int hnum=0;
 int pidhist[10000];
@@ -210,7 +209,7 @@ char *read_input(void){
 }
 
 char **parse_args(char *cmdline){
-    char **cmd_args=malloc(sizeof(char)*buffer_length);
+    char **cmd_args=malloc(sizeof(char *)*buffer_length);
     int pos=0;
     char *ptr=cmdline;
     char *start=cmdline;
@@ -264,7 +263,7 @@ char **replace_env_vars(char **args){
 }
 
 char **parse_args_env(char *cmdline){
-    char **cmd_args=malloc(sizeof(char)*2);
+    char **cmd_args=malloc(sizeof(char *)*2);
     int pos=0;
     char *ptr=cmdline;
     char *start=cmdline;
@@ -282,7 +281,7 @@ char **parse_args_env(char *cmdline){
 }
 
 char **parse_pipe(char *cmdline){
-    char **cmd_args=malloc(sizeof(char)*2);
+    char **cmd_args=malloc(sizeof(char *)*2);
     int pos=0;
     char *ptr=cmdline;
     char *start=cmdline;
